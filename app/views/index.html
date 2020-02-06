@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  PROVISIONING
+  Provisioning
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -20,58 +20,80 @@
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
-<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-three-quarters">
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
+    <h1>Provisioning</h1>
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    <p>Nominated Access - This scenario is where one competent adult wants to share access to some/all of their health data with another competent adult. 
+          Both parties will need to have an NHS login.</p>
+        <ul>
+          <li><a href="https://jira.digital.nhs.uk/secure/RapidBoard.jspa?rapidView=1886" target="_blank">JIRA Board</a></li>
+          <li><a href="https://confluence.digital.nhs.uk/display/NL/Provisioning+Interface" target="_blank">Confluence</a></li>
+          <li><a href="hhttps://miro.com/app/board/o9J_kvKmy0w=/" target="_blank">Miro</a></li>
+        </ul>
 
-      <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
-      </p>
+          <div class="nhsuk-grid-row nhsuk-panel-group">
+        <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+          <div class="nhsuk-panel">
+            <h3 class="nhsuk-heading-xl">1</h3>
+            <p>Iteration</p>
+          </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+            <div class="nhsuk-panel">
+              <h3 class="nhsuk-heading-xl">0</h3>
+              <p>Users involved</p>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
+            <div class="nhsuk-panel">
+              <h3 class="nhsuk-heading-xl">0</h3>
+              <p>Mins of user testing</p>
+            </div>
+          </div>
+        </div>      
 
-      <hr>
 
-      <h2>
-        About this page
-      </h2>
 
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
+      <details class="nhsuk-details nhsuk-expander version-list">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            v1
+          </span>
+        </summary>
+        <div class="nhsuk-details__text version-text">
+          <br>
 
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
+          {{ button({
+            "text": "Launch v1",
+            "href": "v1/index"
+          }) }}
+          <hr>
+        <p>Date started: 06/02/2019<br>
+     Date ended: - </p>
 
-      <hr>
+        <h3>User testing (0)</h3>
+          <ul>
+            <li>-</li>
+          </ul>
 
-      <h2>
-        Documentation
-      </h2>
+        <h3>Key Findings (0)</h3>
+          <ul>
+            <li>-</li>
+          </ul>
+        
+        <h3>Design Challenges (0)</h3>
+          <ul>
+            <li>-</li>
+          </ul>
+          
+        </div>
 
-      <ul>
-        <li>
-          Get started with <a href="/docs">how to guides and page templates</a>
-        </li>
-        <li>
-          Copy and paste styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
-        </li>
-      </ul>
+      </details>
 
-      <!-- End of content -->
 
     </div>
   </div>
