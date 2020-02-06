@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  Provisioning
+  Provisioning - Index
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -27,72 +27,35 @@
 
     <h1>Provisioning</h1>
 
-    <p>Nominated Access - This scenario is where one competent adult wants to share access to some/all of their health data with another competent adult. 
-          Both parties will need to have an NHS login.</p>
+    <p>Provisioning can be split into two parts.<br>
+    1. <b>Provisioning interface</b> which allows trusted parties to create and ammend NHS login accounts via an API.
+    2. <b>Create account</b> which allows a user to claim an NHS login account created through the above interface.</p>
+
         <ul>
           <li><a href="https://jira.digital.nhs.uk/secure/RapidBoard.jspa?rapidView=1886" target="_blank">JIRA Board</a></li>
           <li><a href="https://confluence.digital.nhs.uk/display/NL/Provisioning+Interface" target="_blank">Confluence</a></li>
           <li><a href="hhttps://miro.com/app/board/o9J_kvKmy0w=/" target="_blank">Miro</a></li>
         </ul>
 
-          <div class="nhsuk-grid-row nhsuk-panel-group">
-        <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
-          <div class="nhsuk-panel">
-            <h3 class="nhsuk-heading-xl">1</h3>
-            <p>Iteration</p>
-          </div>
-          </div>
-          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
-            <div class="nhsuk-panel">
-              <h3 class="nhsuk-heading-xl">0</h3>
-              <p>Users involved</p>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-third nhsuk-panel-group__item">
-            <div class="nhsuk-panel">
-              <h3 class="nhsuk-heading-xl">0</h3>
-              <p>Mins of user testing</p>
-            </div>
-          </div>
-        </div>      
+<div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Launch provisioning interface prototype</span>
+  </a>
+</div>
 
-
-
-      <details class="nhsuk-details nhsuk-expander version-list">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            v1
-          </span>
-        </summary>
-        <div class="nhsuk-details__text version-text">
-          <br>
-
-          {{ button({
-            "text": "Launch v1",
-            "href": "v1/index"
-          }) }}
-          <hr>
-        <p>Date started: 06/02/2019<br>
-     Date ended: - </p>
-
-        <h3>User testing (0)</h3>
-          <ul>
-            <li>-</li>
-          </ul>
-
-        <h3>Key Findings (0)</h3>
-          <ul>
-            <li>-</li>
-          </ul>
-        
-        <h3>Design Challenges (0)</h3>
-          <ul>
-            <li>-</li>
-          </ul>
-          
-        </div>
-
-      </details>
+<div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="provisioninginterface/index">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Launch create account prototype</span>
+  </a>
+</div>
 
 
     </div>
