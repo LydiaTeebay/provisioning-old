@@ -1,0 +1,42 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf in {{ data.service or 'stepWell' }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }} has invited you to act on their behalf in {{ data.service or 'stepWell' }}
+      </h1>
+      
+      <p>If you accept the invite, you will be able to:
+        <!-- dynamic content from the service -->
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>book <b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> appointments</li>
+            <li>order <b>{{ data.primaryUserFirstName or 'Alice' }}'s</b> repeat prescriptions</li>
+          </ul>
+      </p>
+
+      <!-- THIS PART NEEDS SOME LOVE FROM A CONTENT DESIGNER --> 
+
+      <p>To respond to the invite you must log in using NHS login.</p>
+
+      <p>If you do not have an NHS login, you must <a href="https://delegated-access-nhslogin.herokuapp.com/create-account/v18/start?service=stepWell&serviceName=stepWell&returnUrl=https://delegated-access.herokuapp.com/v5/service/consent&">set up an NHS login</a> and prove who you are. 
+        This will give you a secure and re-usable way to access multiple healthcare websites or apps.</br></p>
+      <p>You will then need to return here to respond to the invite.</p>
+
+
+      <p>This invite will expire in 7 days.</p>
+
+      <p>If you do not want to act on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b> in <b>{{ data.service or 'stepWell' }}</b>, you can ignore this email.</p>
+      
+      <p><a href="https://nhs-cid.herokuapp.com/create-account/v18/start?service=stepWell&serviceName=stepWell&returnUrl=https://delegated-access.herokuapp.com/v5/service/consent" class="nhsuk-button">Respond to invite</a>
+      
+      <p><a href="#">Contact us</a> if you do not know this person or you think this may have been sent in error.</p>
+    </div>
+  </div>
+
+{% endblock %}
