@@ -1,0 +1,57 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+KBV
+
+{% endblock %}
+
+{% block topRow %}
+{% if resend === "yes" %}
+{% import "layouts/_callout.html" as callout %}
+{{ callout.pattern('','Your security code has been resent.','attention') }}
+{% endif %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+  
+        <h1>KBV</h1>
+    <div class="nhsuk-grid-column-two-thirds">
+    
+
+        <p>Enter the security code that we've sent to *******8209.</p>
+
+       <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="securityCodes">
+          Security code
+          </label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+          The code is 6 numbers
+          </span>
+          <input class="nhsuk-input" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+        </div>
+
+<a href="kbv" role="button" draggable="false" class="nhsuk-button">
+  Continue
+</a>
+
+    <p class="">If you don't have access to your phone, you can <a href="/account-recovery/enter-number{{ params }}">change your phone number</a> securely.</p>
+
+
+</div>
+
+{% endblock %}
+
+
+ 
+
