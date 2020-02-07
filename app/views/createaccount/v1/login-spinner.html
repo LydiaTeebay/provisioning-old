@@ -7,7 +7,7 @@
 
 {% block extrastyles %}
 
-{% if reason === 'idpending' %}
+{# {% if reason === 'idpending' %}
 <meta http-equiv="refresh" content="3;url=error-id-not-checked{{ params }}">
 {% elif reason === 'nam' %}
 <meta http-equiv="refresh" content="3;url=/service-access/v18/service-access-connect-gp{{ params }}">
@@ -35,7 +35,7 @@
 <meta http-equiv="refresh" content="3;url=recovery-email{{ params }}">
 {% else %}
 <meta http-equiv="refresh" content="3;url={{ backlink.link() }}">
-{% endif %}
+{% endif %} #}
 
 {% endblock %}
 
