@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-KBV
+Tell us your NHS number
 
 {% endblock %}
 
@@ -21,29 +21,28 @@ KBV
   
     <div class="nhsuk-grid-column-two-thirds">
     
-        <h1>KBV</h1>
-
-        <p>Enter the security code that we've sent to *******8209.</p>
-
-       <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="securityCodes">
-          Security code
-          </label>
-          <span class="nhsuk-hint" id="input-with-hint-text-hint">
-          The code is 6 numbers
+ 
+      <div class="nhsuk-form-group">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Tell us your NHS number
+            </h1>
+          </legend>
+          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            Your NHS number is a 10 digit number, like 485 777 3456. You can find it on any document that the NHS has sent to you, such as test results or appointment letters.
           </span>
-          <input class="nhsuk-input" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
-        </div>
 
-<a href="kbv" role="button" draggable="false" class="nhsuk-button">
+          <div class="nhsuk-form-group">
+            <input class="nhsuk-input" id="nhsnumber" name="nhsnumber" type="number">
+          </div>
+            
+      </div>
+<a href="passwordset" role="button" draggable="false" class="nhsuk-button">
   Continue
 </a>
 
-    <p class="">If you don't have access to your phone, you can <a href="/account-recovery/enter-number{{ params }}">change your phone number</a> securely.</p>
-
-
-</div>
-
+    </div>  
+  </div>
 {% endblock %}
 
 
