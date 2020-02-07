@@ -24,11 +24,12 @@ Check your phone
 {% block content %}
 
   <div class="nhsuk-grid-row">
+  
+        <h1>Check your phone</h1>
     <div class="nhsuk-grid-column-two-thirds">
     
-      <h1>Check your phone</h1>
 
-                  <p>Enter the security code we sent to *******8209.</p>
+        <p>Enter the security code that we've sent to *******8209.</p>
 
        <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="securityCodes">
@@ -37,21 +38,16 @@ Check your phone
           <span class="nhsuk-hint" id="input-with-hint-text-hint">
           The code is 6 numbers
           </span>
-          <input class="form-control" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+          <input class="nhsuk-input" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
-
-
-    <div class="form-group">
-
-       <a id="securitycodeContinue" href="login-spinner{{ params }}" class="button">Continue</a>
-
-    </div>
+<a href="/kbv" role="button" draggable="false" class="nhsuk-button">
+  Continue
+</a>
 
     <p class="">If you don't have access to your phone, you can <a href="/account-recovery/enter-number{{ params }}">change your phone number</a> securely.</p>
 
 
-  </form>
 </div>
 
 {% endblock %}
