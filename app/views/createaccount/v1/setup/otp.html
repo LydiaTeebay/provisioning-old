@@ -14,7 +14,7 @@ Check your phone
 
 {% block topRow %}
 {% if resend === "yes" %}
-{% import "_partials/_components/_callout.html" as callout %}
+{% import "layouts/_callout.html" as callout %}
 {{ callout.pattern('','Your security code has been resent.','attention') }}
 {% endif %}
 {% endblock %}
@@ -78,7 +78,6 @@ Check your phone
 
     <p class="">If you don't have access to your phone, you can <a href="/account-recovery/enter-number{{ params }}">change your phone number</a> securely.</p>
 
-    {% include '_partials/_includes/_scenarios_2fa.html' %}
 
   </form>
 </div>
