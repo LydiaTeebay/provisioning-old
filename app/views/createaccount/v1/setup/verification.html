@@ -12,19 +12,21 @@ Tell us your NHS number
   
     <div class="nhsuk-grid-column-two-thirds">
     
- 
-      <div class="nhsuk-form-group">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
+                <h1>
               Tell us your NHS number
             </h1>
-          </legend>
-          <p>You can find it on any document that the NHS has sent to you, such as test results or appointment letters.</p>
-          <span class="nhsuk-hint nhsuk-u-margin-bottom-2">
-          Your NHS number is a 10 digit number, like 485 777 3456.</span>
 
-          <div class="nhsuk-form-group">
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhsnumber" name="nhsnumber" type="number">
+          <p>You can find it on any document that the NHS has sent to you, such as test results or appointment letters.</p>
+
+ 
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="securityCodes">
+            NHS number
+          </label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+            Your NHS number is a 10 digit number, like 485 777 3456.
+          </span>
+            <input class="nhsuk-input nhsuk-input--width-10" id="nhsnumber" name="nhsnumber" type="number" aria-describedby="nhsnumber" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
           </div>
             
       </div>
