@@ -4,6 +4,7 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
+@import 'components/spinner';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
@@ -27,3 +28,4 @@
 .body-email .nhsuk-footer .nhsuk-width-container{
 	display: none;
 }
+
