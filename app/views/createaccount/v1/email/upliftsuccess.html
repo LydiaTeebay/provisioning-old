@@ -1,0 +1,29 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+      </h1>
+      
+      <p>Your NHS login has successfully been verified.</p>
+
+      <p>You can now use this method of logging in to medical websites or apps wherever you see "NHS login"</p>
+      
+      <p>Websites or apps that you can access using your NHS login:
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>list item</li>
+            <li>list item</li>
+          </ul>
+      </p>
+      
+    </div>
+  </div>
+
+{% endblock %}
