@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  You have set up your NHS login
+  You now have an NHS login
 {% endblock %}
 
 {% block content %}
@@ -9,19 +9,16 @@
     <div class="nhsuk-grid-column-full">
 
       <p><h1 class="nhsuk-fieldset__legend--l">
-        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+       You now have an NHS login
       </h1>
+      
+      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
       
       <p>You have successfully set up your NHS login.</p>
 
-      <p>You can now use this method of logging in to medical websites or apps wherever you see "NHS login"</p>
+      <p>You can use your NHS login to access health website and apps whenever you see ‘NHS login’.</p>
       
-      <p>Websites or apps that you can access using your NHS login:
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
-      </p>
+      <p>If you have been advised to create an NHS login by your GP, speak to them about where you can use it.</p>
       
     </div>
   </div>

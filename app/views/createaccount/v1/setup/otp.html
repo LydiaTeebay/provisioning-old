@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-NHS login - Check your phone
+Check your phone
 
 {% endblock %}
 
@@ -29,15 +29,14 @@ NHS login - Check your phone
     
         <h1>Check your phone</h1>
 
-        <p>Enter the security code that we've sent to *******8209.</p>
+        <p>Enter the 6 digit security code that we've sent to *******8209.</p>
+
+        <p>This is the phone number that is registered with your GP surgery.</p>
 
        <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="securityCodes">
           Security code
           </label>
-          <span class="nhsuk-hint" id="input-with-hint-text-hint">
-          The code is 6 numbers
-          </span>
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
@@ -45,8 +44,7 @@ NHS login - Check your phone
   Continue
 </a>
 
-    <p>If you don't have access to your phone or need to change your number, you will need to update your records with your GP.</p>
-
+      <p>If you do not recognise this phone number or do not have access to your phone, you will need to update your records with your GP.</p>
 </div>
 
 {% endblock %}

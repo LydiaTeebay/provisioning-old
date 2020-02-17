@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Your NHS login
+  Your GP has proven who you are
 {% endblock %}
 
 {% block content %}
@@ -9,19 +9,16 @@
     <div class="nhsuk-grid-column-full">
 
       <p><h1 class="nhsuk-fieldset__legend--l">
-        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+          Your GP has proven who you are
       </h1>
       
-      <p>Your NHS login has successfully been verified.</p>
-
-      <p>You can now use this method of logging in to medical websites or apps wherever you see "NHS login"</p>
+      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
       
-      <p>Websites or apps that you can access using your NHS login:
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>list item</li>
-            <li>list item</li>
-          </ul>
-      </p>
+      <p>Your GP has successfully proven who you are, and your NHS login has been verified.</p>
+
+      <p>This means your NHS login can be used to access services that you use or store personal information about you.</p>
+      
+      <p>You can use your NHS login to access health website and apps whenever you see ‘NHS login’.</p>
       
     </div>
   </div>
