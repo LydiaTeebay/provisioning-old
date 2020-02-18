@@ -1,59 +1,10 @@
-<!--
 
-  There are two ways of making the tracker:
-
-  1. Using a traditional table component taken from the GOV.UK Design System, and adding each row manually to the table
-
-  OR
-
-  2. Using the method shown in this file, utilising NunJucks arrays, loops and if statements, where the logic used takes care of
-     adding those table rows for you, all you need to do is add items in an array.
-
-     The choice is completely youts!
-
-     If you do choose to go with option 1, the following is the HTML for the table component
-
-    <table class="govuk-table">
-      <caption class="govuk-table__caption">Dates and amounts</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Date</th>
-          <th scope="col" class="govuk-table__header">Amount</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">First 6 weeks</th>
-          <td class="govuk-table__cell">£109.80 per week</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Next 33 weeks</th>
-          <td class="govuk-table__cell">£109.80 per week</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Total estimated pay</th>
-          <td class="govuk-table__cell">£4,282.20</td>
-        </tr>
-      </tbody>
-    </table>
-
- -->
 
 {% extends "layout.html" %}
-
-  {# Customise the page title here #}
 
   {% block pageTitle %}
     Research and design tracker
   {% endblock %}
-
-  {# READ THE COMMENTS BELOW TO UNDERSTAND HOW THE TABLE WORKS #}
-
-    {# Below is an array, a breakdown of the details of each of your items in data form. You can add any sort of identifier within the array along with it's description. #}
-
-    {# The benefit of using the array below is, when you add more and more items here, the table at the bottom of this page, will constantly loop through this array. This means that any new items added ... #}
-
-    {# ... will automatically be added into the table as a new row! #}
 
   {# EXAMPLE IDENTIFERS USED IN THE ARRAY EXPLANATION #}
 
@@ -87,19 +38,19 @@
 
   {% set items = [
 
-    { page: 'email create account', id: 'createaccount/v1/email/invite', name: 'email create account', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'createaccount/v1/email/invite', name: 'email create account', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'knowledge based verification', id: 'createaccount/v1/setup/verification', name: 'knowledge based verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/verification', name: 'knowledge based verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'OTP', id: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'password set', id: 'createaccount/v1/setup/passwordset', name: 'password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'create account', id: 'createaccount/v1/setup/passwordset', name: 'password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
 
-    { page: 'create account success', id: 'createaccount/v1/setup/success', name: 'create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/success', name: 'create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'email create account success', id: 'createaccount/v1/email/success', name: 'email create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/email/success', name: 'email create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'email uplift success', id: 'createaccount/v1/email/upliftsuccess', name: 'email uplift success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+    { page: 'uplift', id: 'createaccount/v1/email/upliftsuccess', name: 'email uplift success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
 
 
   ] %}
