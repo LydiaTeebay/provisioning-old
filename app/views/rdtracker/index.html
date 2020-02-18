@@ -38,19 +38,19 @@
 
   {% set items = [
 
-    { page: 'create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'CA email invite', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'Create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'Invite (email)', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'CA verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'Create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'Verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'v1/setup/otp', link: 'createaccount/v1/setup/otp', name: 'CA OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'Create account', id: 'v1/setup/otp', link: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'CA password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'Create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'Password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
 
-    { page: 'create account', id: 'v1/setup/success', link: 'createaccount/v1/setup/success', name: 'CA success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'Create account', id: 'v1/setup/success', link: 'createaccount/v1/setup/success', name: 'Success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'v1/email/success', link: 'createaccount/v1/email/success', name: 'CA email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'Create account', id: 'v1/email/success', link: 'createaccount/v1/email/success', name: 'Success (email)', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'uplift', id: 'v1/email/upliftsuccess', link: 'createaccount/v1/email/upliftsuccess', name: 'Uplift email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+    { page: 'Uplift', id: 'v1/email/upliftsuccess', link: 'createaccount/v1/email/upliftsuccess', name: 'Success (email)', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
 
 
   ] %}
@@ -220,9 +220,9 @@
 
                 <!-- These are the rest of the options within the Page dropdown -->
 
-                <option value="create account" {% if data.filter_page == 'create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
-                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>Uplift</option>
-                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning interface</option>
+                <option value="Create account" {% if data.filter_page == 'Create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
+                <option value="Uplift" {% if data.filter_page == 'Uplift' and data.filter != 'reset' %}selected{% endif %}>Uplift</option>
+                <option value="Provisioning interface" {% if data.filter_page == 'Provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning interface</option>
 
               </select>
 
@@ -320,7 +320,6 @@
               <tr class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="col">Page type</th>
                 <th class="nhsuk-table__header" scope="col">Page</th>
-                <th class="nhsuk-table__header" scope="col">View on prototype</th>
                 <th class="nhsuk-table__header" scope="col">UR confidence</th>
                 <th class="nhsuk-table__header" scope="col">UR status</th>
                 <th class="nhsuk-table__header" scope="col">Sign-off status</th>
@@ -351,13 +350,7 @@
 
                         <tr id="item-{{ item.id }}" class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">{{ item.page }}</td>
-                          <td class="nhsuk-table__cell"><a href="/{{ item.id }}">{{ item.name }}</a></td>
-                          <td class="nhsuk-table__cell"><a href="../{{ item.link }}">
-                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M0 0h24v24H0z" fill="none"></path>
-                              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                            </svg>
-                          </a></td>
+                          <td class="nhsuk-table__cell"><a href="/rdtracker/{{ item.id }}">{{ item.name }}</a></td>
                           <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
                           <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
                           <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
