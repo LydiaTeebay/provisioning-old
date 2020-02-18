@@ -210,7 +210,7 @@
 
               <!-- Filter selector for Page -->
 
-              <label class="nhsuk-label" for="filter_page">Page</label>
+              <label class="nhsuk-label" for="filter_page">Page type</label>
 
               <select class="nhsuk-select" id="filter_page" name="filter_page" style="width: 150px;">
 
@@ -220,11 +220,9 @@
 
                 <!-- These are the rest of the options within the Page dropdown -->
 
-                <option value="login" {% if data.filter_page == 'login' and data.filter != 'reset' %}selected{% endif %}>Login</option>
-                <option value="account" {% if data.filter_page == 'account' and data.filter != 'reset' %}selected{% endif %}>Account</option>
-                <option value="history" {% if data.filter_page == 'history' and data.filter != 'reset' %}selected{% endif %}>History</option>
-                <option value="payments" {% if data.filter_page == 'payments' and data.filter != 'reset' %}selected{% endif %}>Payments</option>
-                <option value="orders" {% if data.filter_page == 'orders' and data.filter != 'reset' %}selected{% endif %}>Orders</option>
+                <option value="create account" {% if data.filter_page == 'create account' and data.filter != 'reset' %}selected{% endif %}>Login</option>
+                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>Account</option>
+                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>History</option>
 
               </select>
 
