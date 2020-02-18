@@ -38,19 +38,19 @@
 
   {% set items = [
 
-    { page: 'create account', id: 'createaccount/v1/email/invite', name: 'email create account', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'createaccount/v1/email/invite', name: 'CA email invite', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/verification', name: 'knowledge based verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/verification', name: 'CA verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/otp', name: 'CA OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/passwordset', name: 'password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'create account', id: 'createaccount/v1/setup/passwordset', name: 'CA password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/success', name: 'create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/setup/success', name: 'CA success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'createaccount/v1/email/success', name: 'email create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'createaccount/v1/email/success', name: 'CA email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'uplift', id: 'createaccount/v1/email/upliftsuccess', name: 'email uplift success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+    { page: 'uplift', id: 'createaccount/v1/email/upliftsuccess', name: 'Uplift email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
 
 
   ] %}
@@ -220,9 +220,9 @@
 
                 <!-- These are the rest of the options within the Page dropdown -->
 
-                <option value="create account" {% if data.filter_page == 'create account' and data.filter != 'reset' %}selected{% endif %}>Login</option>
-                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>Account</option>
-                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>History</option>
+                <option value="create account" {% if data.filter_page == 'create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
+                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>uplift</option>
+                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning Interface</option>
 
               </select>
 
@@ -242,9 +242,9 @@
 
                 <!-- These are the rest of the options within the Page dropdown -->
 
-                <option value="high" {% if data.filter_ur_confidence == 'high' and data.filter != 'reset' %}selected{% endif %}>High</option>
-                <option value="medium" {% if data.filter_ur_confidence == 'medium' and data.filter != 'reset' %}selected{% endif %}>Medium</option>
-                <option value="low" {% if data.filter_ur_confidence == 'low' and data.filter != 'reset' %}selected{% endif %}>Low</option>
+                <option value="High" {% if data.filter_ur_confidence == 'High' and data.filter != 'reset' %}selected{% endif %}>High</option>
+                <option value="Medium" {% if data.filter_ur_confidence == 'Medium' and data.filter != 'reset' %}selected{% endif %}>Medium</option>
+                <option value="Low" {% if data.filter_ur_confidence == 'Low' and data.filter != 'reset' %}selected{% endif %}>Low</option>
 
               </select>
 
