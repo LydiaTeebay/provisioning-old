@@ -38,19 +38,19 @@
 
   {% set items = [
 
-    { page: 'create account', id: 'createaccount/v1/email/invite', name: 'CA email invite', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'CA email invite', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/verification', name: 'CA verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'CA verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/otp', name: 'CA OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'v1/setup/otp', link: 'createaccount/v1/setup/otp', name: 'CA OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/passwordset', name: 'CA password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'CA password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
 
-    { page: 'create account', id: 'createaccount/v1/setup/success', name: 'CA success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'v1/setup/success', link: 'createaccount/v1/setup/success', name: 'CA success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'create account', id: 'createaccount/v1/email/success', name: 'CA email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'create account', id: 'v1/email/success', link: 'createaccount/v1/email/success', name: 'CA email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'uplift', id: 'createaccount/v1/email/upliftsuccess', name: 'Uplift email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+    { page: 'uplift', id: 'v1/email/upliftsuccess', link: 'createaccount/v1/email/upliftsuccess', name: 'Uplift email success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
 
 
   ] %}
@@ -319,9 +319,11 @@
 
               <tr class="nhsuk-table__row">
                 <th class="nhsuk-table__header" scope="col">Page</th>
+                <th class="nhsuk-table__header" scope="col">Prototype link</th>
                 <th class="nhsuk-table__header" scope="col">UR confidence</th>
                 <th class="nhsuk-table__header" scope="col">UR status</th>
                 <th class="nhsuk-table__header" scope="col">Sign-off status</th>
+                
               </tr>
 
             </thead>
@@ -347,7 +349,8 @@
                       {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or item.sign_off_status == data.filter_sign_off_status or data.filter == 'reset' %}
 
                         <tr id="item-{{ item.id }}" class="nhsuk-table__row">
-                          <td class="nhsuk-table__cell"><a href="../{{ item.id }}">{{ item.name }}</a></td>
+                          <td class="nhsuk-table__cell"><a href="/{{ item.id }}">{{ item.name }}</a></td>
+                          <td class="nhsuk-table__cell"><a href="../{{ item.link }}">View prototype</a></td>
                           <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
                           <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
                           <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
