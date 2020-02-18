@@ -5,7 +5,7 @@
 .app-step-nav-header {
   position: relative;
   padding: 10px;
-  background: nhsuk-colour("light-grey", $legacy: "grey-4");
+  background: nhsuk-colour("light-grey");
   border-top: solid 1px $nhsuk-border-colour;
   border-bottom: solid 1px $nhsuk-border-colour;
   @include nhsuk-media-query($from: tablet) {
