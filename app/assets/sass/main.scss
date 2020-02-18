@@ -40,7 +40,7 @@
 }
 
 .custom-card-green {
-    background-color: #00703c;
+    background-color: #00ab4e;
     color: #FFF;
     text-align: left;
     .custom-card-small-text {
@@ -52,7 +52,7 @@
 }
 
 .custom-card-yellow {
-    background-color: #ffdd00;
+    background-color: #fdb71a;
     // color: $nhsuk-text-colour;
     text-align: left;
     .custom-card-small-text {
@@ -64,7 +64,7 @@
 }
 
 .custom-card-red {
-    background-color: #d4351c;
+    background-color: #ee3124;
     color: #FFF;
     text-align: left;
     .custom-card-small-text {
@@ -94,7 +94,7 @@
 
 strong.nhsuk-tag {
     &.tag-signed-off {
-	background: #00703c;
+	background: #00ab4e;
     padding: 2px 12px 5px 12px;
     border-radius: 6px;
     font: small-caption;
@@ -104,7 +104,7 @@ strong.nhsuk-tag {
     color: white;
     }
     &.tag-awaiting-sign-off {
-		background: #ffdd00;
+		background: #fdb71a;
 		padding: 2px 12px 5px 12px;
 		border-radius: 6px;
 		font: small-caption;
@@ -114,7 +114,7 @@ strong.nhsuk-tag {
 		color: black;
       }
     &.tag-blocked {
-		background: #d4351c;
+		background: #ee3124;
 		padding: 2px 12px 5px 12px;
 		border-radius: 6px;
 		font: small-caption;
