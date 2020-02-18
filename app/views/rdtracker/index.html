@@ -6,35 +6,9 @@
     Research and design tracker
   {% endblock %}
 
-  {# EXAMPLE IDENTIFERS USED IN THE ARRAY EXPLANATION #}
 
-    {# page = This is the high-level categorisation of the screen you want to add, for e.g. page = login can encapsulate the login page, forgotten password and sign-up, they would all share the same page = 'login' #}
+    {# ARRAY START #}
 
-    {# id = In the array below is used as the unique page URL, it doesn't need the .html e.g. id: 'login-page', id: 'sign-up-page', id: 'forgotten-password-page' #}
-
-    {# name = The name is the information that is displayed in the table row, this will be the name of the page. Can either be lower case or upper e.g. name: 'Login Page' name: 'Sign-up Page' #}
-
-    {# ur_confidence: This is where research insights are plugged into the table, this is where you will add the flag of low, medium or high for the confidence level of a specific page. #}
-
-    {# ur_status: This is another research insight identifying if there is a sufficient amount of research done for a specific page, theres either sufficient, ongoing or not started. #}
-
-    {# sign_off_status: This is to track the phase of the design and where it's at with stakeholders or management, it can be either signed-off, awaiting sign-off or blocked. #}
-
-    {# css_class: This is where we inject some CSS into the table, tags when used properly can convey alot of meaning, the css class inherits whatever styles you have made in the application.scss file for a tag class in the table (this will make more sense when you see the table at the bottom of this file), the tags can have the same descriptions has the sign_off_status #}
-
-  {# All of the above generates the table row, this is where you will be editiing information the most, once done, the for loops further down below will take care of adding new rows to the table! #}
-
-  {# BEST PRACTICE WHEN ADDING NEW ITEMS INTO THE ARRAY #}
-
-    {# Try to stick to using lower case for text that is not being displayed in the table #}
-
-    {# For each new row you want in the table, add a comma after the ending curly bracket #}
-
-    {# The final item within the array you can't have a comma after the curly bracket, trust me, I spent HOURS de-bugging to realise that. #}
-
-    {# Add commas after each identifier, e.g. page: 'login', name: 'Login page', ... #}
-
-  {# ARRAY START #}
 
   {% set items = [
 
@@ -82,7 +56,7 @@
 
       -->
 
-      <div class="nhsuk-grid-column-two-thirds">
+{#       <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-l">Design and Research Tracker</h1>
         <p class="nhsuk-body-l">This area is used as a brief explanation of the tracker and its purpose.</p>
         <a href="#" class="nhsuk-link">View our sign off process</a>
@@ -91,7 +65,7 @@
 
       <div class="nhsuk-grid-column-one-third">
         <div class="nhsuk-!-padding-bottom-2"></div>
-        <h1 class="nhsuk-heading-s">Quick links</h1>
+        <h1 class="nhsuk-heading-s">Quick links</h1> #}
 
         <!--
 
@@ -102,7 +76,7 @@
 
         -->
 
-        <details class="nhsuk-details" data-module="nhsuk-details" style="margin-left: 5px;">
+{#         <details class="nhsuk-details" data-module="nhsuk-details" style="margin-left: 5px;">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Prototype link
@@ -118,7 +92,7 @@
 
         <div class="nhsuk-!-padding-bottom-2"></div>
         <a href="#" class="nhsuk-link" style="margin-left: 30px;">Link to DevOps or Jira</a>
-      </div>
+      </div> #}
 
       <!--
 
@@ -126,9 +100,9 @@
 
       -->
 
-      <div class="nhsuk-grid-column-full">
+{#       <div class="nhsuk-grid-column-full">
         <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
-      </div>
+      </div> #}
 
       <!--
 
