@@ -221,8 +221,8 @@
                 <!-- These are the rest of the options within the Page dropdown -->
 
                 <option value="create account" {% if data.filter_page == 'create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
-                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>uplift</option>
-                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning Interface</option>
+                <option value="uplift" {% if data.filter_page == 'uplift' and data.filter != 'reset' %}selected{% endif %}>Uplift</option>
+                <option value="provisioning interface" {% if data.filter_page == 'provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning interface</option>
 
               </select>
 
@@ -318,8 +318,9 @@
             <thead class="nhsuk-table__head">
 
               <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Page type</th>
                 <th class="nhsuk-table__header" scope="col">Page</th>
-                <th class="nhsuk-table__header" scope="col">Prototype link</th>
+                <th class="nhsuk-table__header" scope="col">View on prototype</th>
                 <th class="nhsuk-table__header" scope="col">UR confidence</th>
                 <th class="nhsuk-table__header" scope="col">UR status</th>
                 <th class="nhsuk-table__header" scope="col">Sign-off status</th>
@@ -349,8 +350,14 @@
                       {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or item.sign_off_status == data.filter_sign_off_status or data.filter == 'reset' %}
 
                         <tr id="item-{{ item.id }}" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">{{ item.page }}</td>
                           <td class="nhsuk-table__cell"><a href="/{{ item.id }}">{{ item.name }}</a></td>
-                          <td class="nhsuk-table__cell"><a href="../{{ item.link }}">View prototype</a></td>
+                          <td class="nhsuk-table__cell"><a href="../{{ item.link }}">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                          </a></td>
                           <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
                           <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
                           <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
