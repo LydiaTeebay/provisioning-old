@@ -87,15 +87,20 @@
 
   {% set items = [
 
-    { page: 'login', id: 'login-page', name: 'Login page', ur_confidence: 'Low', ur_status: 'Ongoing', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'email create account', id: 'createaccount/v1/email/invite', name: 'email create account', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'account', id: 'account-page', name: 'Account page', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'knowledge based verification', id: 'createaccount/v1/setup/verification', name: 'knowledge based verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'history', id: 'history-page', name: 'History page', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+    { page: 'OTP', id: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'payments', id: 'payments-page', name: 'Payments page', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'password set', id: 'createaccount/v1/setup/passwordset', name: 'password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
 
-    { page: 'orders', id: 'orders-page', name: 'Orders page', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+    { page: 'create account success', id: 'createaccount/v1/setup/success', name: 'create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'email create account success', id: 'createaccount/v1/email/success', name: 'email create account success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'email uplift success', id: 'createaccount/v1/email/upliftsuccess', name: 'email uplift success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+
 
   ] %}
 
@@ -195,7 +200,7 @@
               Signed-off pages
             </div>
             <div class="nhsuk-!-padding-bottom-5"></div>
-            15
+            0
           </h1>
         </div>
       </div>
@@ -209,7 +214,7 @@
           </div>
           <div class="nhsuk-!-padding-bottom-5"></div>
           <h1 class="nhsuk-panel__title custom-card-large-text">
-            0
+            6
           </h1>
         </div>
       </div>
@@ -225,7 +230,7 @@
           </a>
           <div class="nhsuk-!-padding-bottom-5"></div>
           <h1 class="nhsuk-panel__title custom-card-large-text">
-            4
+            0
           </h1>
         </div>
         <div class="nhsuk-!-padding-bottom-7"></div>
@@ -249,9 +254,10 @@
 
             <!-- Page DropDown -->
 
-            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+            {# <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop"> #}
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
 
-              <!-- Filter selectr for Page -->
+              <!-- Filter selector for Page -->
 
               <label class="nhsuk-label" for="filter_page">Page</label>
 
@@ -275,7 +281,7 @@
 
             <!-- UR Confidence DropDown -->
 
-            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
 
               <label class="nhsuk-label" for="filter_ur_confidence">UR confidence</label>
 
@@ -297,7 +303,7 @@
 
             <!-- UR Status DropDown -->
 
-            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
 
               <label class="nhsuk-label" for="filter_ur_status">UR status</label>
 
@@ -319,7 +325,7 @@
 
             <!-- Sign-off status DropDown -->
 
-            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
 
               <label class="nhsuk-label" for="filter_sign_off_status">Sign-off status</label>
 
@@ -392,7 +398,7 @@
                       {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or item.sign_off_status == data.filter_sign_off_status or data.filter == 'reset' %}
 
                         <tr id="item-{{ item.id }}" class="nhsuk-table__row">
-                          <td class="nhsuk-table__cell"><a href="/{{ item.id }}">{{ item.name }}</a></td>
+                          <td class="nhsuk-table__cell"><a href="../{{ item.id }}">{{ item.name }}</a></td>
                           <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
                           <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
                           <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
