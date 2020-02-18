@@ -1,0 +1,423 @@
+<!--
+
+  There are two ways of making the tracker:
+
+  1. Using a traditional table component taken from the GOV.UK Design System, and adding each row manually to the table
+
+  OR
+
+  2. Using the method shown in this file, utilising NunJucks arrays, loops and if statements, where the logic used takes care of
+     adding those table rows for you, all you need to do is add items in an array.
+
+     The choice is completely youts!
+
+     If you do choose to go with option 1, the following is the HTML for the table component
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption">Dates and amounts</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">First 6 weeks</th>
+          <td class="govuk-table__cell">£109.80 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+          <td class="govuk-table__cell">£109.80 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total estimated pay</th>
+          <td class="govuk-table__cell">£4,282.20</td>
+        </tr>
+      </tbody>
+    </table>
+
+ -->
+
+{% extends "layout.html" %}
+
+  {# Customise the page title here #}
+
+  {% block pageTitle %}
+    Research and design tracker
+  {% endblock %}
+
+  {# READ THE COMMENTS BELOW TO UNDERSTAND HOW THE TABLE WORKS #}
+
+    {# Below is an array, a breakdown of the details of each of your items in data form. You can add any sort of identifier within the array along with it's description. #}
+
+    {# The benefit of using the array below is, when you add more and more items here, the table at the bottom of this page, will constantly loop through this array. This means that any new items added ... #}
+
+    {# ... will automatically be added into the table as a new row! #}
+
+  {# EXAMPLE IDENTIFERS USED IN THE ARRAY EXPLANATION #}
+
+    {# page = This is the high-level categorisation of the screen you want to add, for e.g. page = login can encapsulate the login page, forgotten password and sign-up, they would all share the same page = 'login' #}
+
+    {# id = In the array below is used as the unique page URL, it doesn't need the .html e.g. id: 'login-page', id: 'sign-up-page', id: 'forgotten-password-page' #}
+
+    {# name = The name is the information that is displayed in the table row, this will be the name of the page. Can either be lower case or upper e.g. name: 'Login Page' name: 'Sign-up Page' #}
+
+    {# ur_confidence: This is where research insights are plugged into the table, this is where you will add the flag of low, medium or high for the confidence level of a specific page. #}
+
+    {# ur_status: This is another research insight identifying if there is a sufficient amount of research done for a specific page, theres either sufficient, ongoing or not started. #}
+
+    {# sign_off_status: This is to track the phase of the design and where it's at with stakeholders or management, it can be either signed-off, awaiting sign-off or blocked. #}
+
+    {# css_class: This is where we inject some CSS into the table, tags when used properly can convey alot of meaning, the css class inherits whatever styles you have made in the application.scss file for a tag class in the table (this will make more sense when you see the table at the bottom of this file), the tags can have the same descriptions has the sign_off_status #}
+
+  {# All of the above generates the table row, this is where you will be editiing information the most, once done, the for loops further down below will take care of adding new rows to the table! #}
+
+  {# BEST PRACTICE WHEN ADDING NEW ITEMS INTO THE ARRAY #}
+
+    {# Try to stick to using lower case for text that is not being displayed in the table #}
+
+    {# For each new row you want in the table, add a comma after the ending curly bracket #}
+
+    {# The final item within the array you can't have a comma after the curly bracket, trust me, I spent HOURS de-bugging to realise that. #}
+
+    {# Add commas after each identifier, e.g. page: 'login', name: 'Login page', ... #}
+
+  {# ARRAY START #}
+
+  {% set items = [
+
+    { page: 'login', id: 'login-page', name: 'Login page', ur_confidence: 'Low', ur_status: 'Ongoing', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'account', id: 'account-page', name: 'Account page', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'history', id: 'history-page', name: 'History page', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'payments', id: 'payments-page', name: 'Payments page', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+
+    { page: 'orders', id: 'orders-page', name: 'Orders page', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' }
+
+  ] %}
+
+  {# ARRAY FINISH #}
+
+{% block content %}
+
+<!-- Main Body Content START -->
+
+<div class="nhsuk-width-container">
+
+  <main class="nhsuk-main-wrapper">
+
+    <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-!-padding-bottom-7"></div>
+
+      <!--
+
+        Hero Section
+
+        This section includes:
+
+          1. The title to the page
+          2. The lead text,
+          3. A link to a seperate page containing your teams sign-off process
+          4. Quick links to the most used documents / prototypes etc.
+
+      -->
+
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Design and Research Tracker</h1>
+        <p class="nhsuk-body-l">This area is used as a brief explanation of the tracker and its purpose.</p>
+        <a href="#" class="nhsuk-link">View our sign off process</a>
+
+      </div>
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-!-padding-bottom-2"></div>
+        <h1 class="nhsuk-heading-s">Quick links</h1>
+
+        <!--
+
+          Types of Quick links:
+
+          1. Links that require a username and password - Details GOV.UK component used (https://design-system.service.gov.uk/components/details/)
+          2. Links that do not require authentication - Normal GOV.UK link component used (https://design-system.service.gov.uk/styles/typography/#links)
+
+        -->
+
+        <details class="nhsuk-details" data-module="nhsuk-details" style="margin-left: 5px;">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Prototype link
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <a href="#" class="nhsuk-link">Link to the prototype goes here</a>
+            <div class="nhsuk-!-padding-bottom-4"></div>
+            <p class="nhsuk-body">Username: </p>
+            <p class="nhsuk-body">Password: </p>
+          </div>
+        </details>
+
+        <div class="nhsuk-!-padding-bottom-2"></div>
+        <a href="#" class="nhsuk-link" style="margin-left: 30px;">Link to DevOps or Jira</a>
+      </div>
+
+      <!--
+
+        Divider
+
+      -->
+
+      <div class="nhsuk-grid-column-full">
+        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+      </div>
+
+      <!--
+
+        Hero Section FINISHES here
+
+      -->
+
+    </div>
+
+    <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-!-padding-bottom-3"></div>
+
+      <!-- Signed-off items -->
+
+      <div class="nhsuk-grid-column-one-third" style="padding-left: 15px;">
+        <div class="nhsuk-panel nhsuk-panel custom-card-green">
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            <div class="nhsuk-panel__body custom-card-small-text">
+              Signed-off pages
+            </div>
+            <div class="nhsuk-!-padding-bottom-5"></div>
+            15
+          </h1>
+        </div>
+      </div>
+
+      <!-- Awaiting Sign-off -->
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-panel nhsuk-panel custom-card-yellow">
+          <div class="nhsuk-panel__body custom-card-small-text">
+            Awaiting Sign-off
+          </div>
+          <div class="nhsuk-!-padding-bottom-5"></div>
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            0
+          </h1>
+        </div>
+      </div>
+
+      <!-- Flagged items -->
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-panel govuk-panel custom-card-red">
+          <a href="flagged-items.html">
+            <div class="nhsuk-panel__body custom-card-small-text">
+              Flagged items
+            </div>
+          </a>
+          <div class="nhsuk-!-padding-bottom-5"></div>
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            4
+          </h1>
+        </div>
+        <div class="nhsuk-!-padding-bottom-7"></div>
+      </div>
+
+      <!-- Filter Table -->
+
+      {# This is where we wrap everything in a <form> tag and post it back to itself e.g. /index #}
+
+      <form action="index" method="POST" role="form" style="padding-left: 15px;">
+
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-grid-row filters-bar">
+
+            {# Selectors #}
+
+            {# This is the 'filters bar' #}
+            {# All you really need to care about is the <select> #}
+            {# Notice the name of the <select> is what will be available to us later as data.filter_page  #}
+
+            <!-- Page DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+
+              <!-- Filter selectr for Page -->
+
+              <label class="nhsuk-label" for="filter_page">Page</label>
+
+              <select class="nhsuk-select" id="filter_page" name="filter_page" style="width: 150px;">
+
+                <!-- This is the default option in the drop down -->
+
+                <option value="all" {% if not data.filter_page or data.filter_page == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="login" {% if data.filter_page == 'login' and data.filter != 'reset' %}selected{% endif %}>Login</option>
+                <option value="account" {% if data.filter_page == 'account' and data.filter != 'reset' %}selected{% endif %}>Account</option>
+                <option value="history" {% if data.filter_page == 'history' and data.filter != 'reset' %}selected{% endif %}>History</option>
+                <option value="payments" {% if data.filter_page == 'payments' and data.filter != 'reset' %}selected{% endif %}>Payments</option>
+                <option value="orders" {% if data.filter_page == 'orders' and data.filter != 'reset' %}selected{% endif %}>Orders</option>
+
+              </select>
+
+            </div>
+
+            <!-- UR Confidence DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+
+              <label class="nhsuk-label" for="filter_ur_confidence">UR confidence</label>
+
+              <select class="nhsuk-select" id="filter_ur_confidence" name="filter_ur_confidence" style="width: 150px;">
+
+                <!-- This is the default option in the drop down -->
+
+                <option value="all" {% if not data.filter_ur_confidence or data.filter_ur_confidence == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="high" {% if data.filter_ur_confidence == 'high' and data.filter != 'reset' %}selected{% endif %}>High</option>
+                <option value="medium" {% if data.filter_ur_confidence == 'medium' and data.filter != 'reset' %}selected{% endif %}>Medium</option>
+                <option value="low" {% if data.filter_ur_confidence == 'low' and data.filter != 'reset' %}selected{% endif %}>Low</option>
+
+              </select>
+
+            </div>
+
+            <!-- UR Status DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+
+              <label class="nhsuk-label" for="filter_ur_status">UR status</label>
+
+              <select class="nhsuk-select" id="filter_ur_status" name="filter_ur_status" style="width: 150px;">
+
+              <!-- This is the default option in the drop down -->
+
+              <option value="all" {% if not data.filter_ur_status or data.filter_ur_status == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="Not-started" {% if data.filter_ur_status == 'Not-started' and data.filter != 'reset' %}selected{% endif %}>Not started</option>
+                <option value="Ongoing" {% if data.filter_ur_status == 'Ongoing' and data.filter != 'reset' %}selected{% endif %}>Ongoing</option>
+                <option value="Sufficient" {% if data.filter_ur_status == 'Sufficient' and data.filter != 'reset' %}selected{% endif %}>Sufficient</option>
+
+              </select>
+
+            </div>
+
+            <!-- Sign-off status DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop">
+
+              <label class="nhsuk-label" for="filter_sign_off_status">Sign-off status</label>
+
+              <select class="nhsuk-select" id="filter_sign_off_status" name="filter_sign_off_status" style="width: 150px;">
+
+              <!-- This is the default option in the drop down -->
+
+              <option value="all" {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="awaiting-sign-off" {% if data.filter_sign_off_status == 'awaiting-sign-off' and data.filter != 'reset' %}selected{% endif %}>Awaiting sign-off</option>
+                <option value="blocked" {% if data.filter_sign_off_status == 'blocked' and data.filter != 'reset' %}selected{% endif %}>Blocked</option>
+                <option value="signed-off" {% if data.filter_sign_off_status == 'signed-off' and data.filter != 'reset' %}selected{% endif %}>Signed-off</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop" style="margin-left: -15px;">
+            <div class="nhsuk-!-padding-bottom-4"></div>
+            <label class="nhsuk-label">&nbsp;</label>
+            <button class="nhsuk-button" data-module="nhsuk-button" name="filter" value="update">Update</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="nhsuk-button govuk-button--secondary" data-module="nhsuk-button" name="filter"
+              value="reset">Reset</button>
+          </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-full">
+
+          {# Items table #}
+
+          {% if not hide_table %}
+
+          <table class="nhsuk-table items all-items" style="margin: 30px -15px 30px -15px;">
+
+            <thead class="nhsuk-table__head">
+
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Page</th>
+                <th class="nhsuk-table__header" scope="col">UR confidence</th>
+                <th class="nhsuk-table__header" scope="col">UR status</th>
+                <th class="nhsuk-table__header" scope="col">Sign-off status</th>
+              </tr>
+
+            </thead>
+
+            <tbody class="nhsuk-table__body">
+
+              {# Loop through our dataset (array) called items and handle each 'item' at a time... #}
+
+              {% for item in items %}
+
+              {# If data.filter_type is not set #}
+              {# Or if the value of data.filter_type is 'all' #}
+              {# Or if the current item's type is equal to the value of data.filter_type #}
+              {# Or if the current item's interaction is equal to the value of data.filter_type #}
+              {# Then go ahead and show the item - using some of the attributes from the data to make each item dynamic #}
+
+                {% if not data.filter_page or data.filter_page == 'all' or item.page == data.filter_page or data.filter == 'reset' %}
+
+                  {% if not data.filter_ur_confidence or data.filter_ur_confidence == 'all' or item.ur_confidence == data.filter_ur_confidence or data.filter == 'reset' %}
+
+                    {% if not data.filter_ur_status or data.filter_ur_status == 'all' or item.ur_status == data.filter_ur_status or data.filter == 'reset' %}
+
+                      {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or item.sign_off_status == data.filter_sign_off_status or data.filter == 'reset' %}
+
+                        <tr id="item-{{ item.id }}" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell"><a href="/{{ item.id }}">{{ item.name }}</a></td>
+                          <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
+                          <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
+                          <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
+                        </tr>
+
+                      {% endif %} <!-- /. data.filter_sign_off_status -->
+
+                    {% endif %} <!-- /. data.filter_ur_status -->
+
+                  {% endif %} <!-- /. data.filter_ur_confidence -->
+
+                {% endif %} <!-- /. data.filter_page -->
+
+              {% endfor %} <!-- /. forLoop -->
+
+            </tbody>
+
+          </table>
+
+          {% endif %} <!-- /. if not hide_table-->
+
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+{% endblock %}
