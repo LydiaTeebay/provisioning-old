@@ -6,7 +6,7 @@
 @import 'components/related-nav';
 @import 'components/spinner';
 @import 'components/button-spinner';
-@import "patterns/related-items";
+@import 'patterns/related-items';
 
 
 ///////////////////////////////////////////
@@ -94,15 +94,33 @@
 
 strong.nhsuk-tag {
     &.tag-signed-off {
-      background-color: nhsuk-colour('green');
-      color: nhsuk-colour('white');
+	background: #00703c;
+    padding: 2px 12px 5px 12px;
+    border-radius: 6px;
+    font: small-caption;
+    font-variant-caps: all-small-caps;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
     }
     &.tag-awaiting-sign-off {
-        background-color: nhsuk-colour('yellow');
-        color: nhsuk-colour('black');
+		background: #ffdd00;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: white;
       }
     &.tag-blocked {
-        background-color: nhsuk-colour('red');
-        color: nhsuk-colour('white');
+		background: #d4351c;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: white;
       }
    }
