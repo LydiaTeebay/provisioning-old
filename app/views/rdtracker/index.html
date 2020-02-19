@@ -12,7 +12,12 @@
 
   {% set items = [
 
+
+    { page: 'Create account', id: 'v1/overview', link: 'createaccount/v1/email/invite', name: 'Overview', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
     { page: 'Create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'Invite (email)', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Create account', id: 'v1/email/spinner', link: 'createaccount/v1/email/spinner', name: 'Spinner', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
     { page: 'Create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'Verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
@@ -135,7 +140,7 @@
           </div>
           <div class="nhsuk-!-padding-bottom-5"></div>
           <h1 class="nhsuk-panel__title custom-card-large-text">
-            6
+            9
           </h1>
         </div>
       </div>
@@ -144,11 +149,9 @@
 
       <div class="nhsuk-grid-column-one-third">
         <div class="nhsuk-panel nhsuk-panel custom-card-red">
-          <a href="flagged-items.html">
             <div class="nhsuk-panel__body custom-card-small-text">
               Flagged
             </div>
-          </a>
           <div class="nhsuk-!-padding-bottom-5"></div>
           <h1 class="nhsuk-panel__title custom-card-large-text">
             0
