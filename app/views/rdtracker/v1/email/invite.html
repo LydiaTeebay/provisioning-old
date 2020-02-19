@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+RBA Design Pack
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-!-padding-bottom-5"></div>
+    <div class="govuk-grid-column-full">
+        <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="index.html">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                    Multiple Choice - One Response (Grid)
+                </li>
+            </ol>
+            <div class="govuk-!-margin-bottom-5"></div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-xl">Multiple choice - one response (grid)</span>
+            View item design
+        </h1>
+
+        <!--
+
+        Page Contents
+
+            <h6 class="govuk-heading-s">Contents</h6>
+            <a href="#itemOverview" class="govuk-link">Item overview</a>
+            <div class="govuk-!-padding-bottom-3"></div>
+            <a href="#designJustifications" class="govuk-link">Design justifications</a>
+            <div class="govuk-!-padding-bottom-3"></div>
+            <a href="#workingForUsers" class="govuk-link">What's working for users?</a>
+            <div class="govuk-!-padding-bottom-3"></div>
+            <a href="#notWorkingForUsers" class="govuk-link">What isn't working for users?</a>
+            <div class="govuk-!-padding-bottom-3"></div>
+            <a href="#nextSteps" class="govuk-link">Next steps</a>
+
+        -->
+
+        <!--
+            Main Content Start
+        -->
+
+        <h3 class="govuk-heading-m" id="itemOverview">Item design overview</h3>
+
+        <h4 class="govuk-heading-s">Aspect ratio:<span style="font-weight: normal;"> 4:3 (800px by 600px safe area)</span></h4>
+        <h4 class="govuk-heading-s">Container size:<span style="font-weight: normal;"> 200px by 200px with 20px inner padding</span></h4>
+        <h4 class="govuk-heading-s">Margin:<span style="font-weight: normal;"> 64px between each component</span></h4>
+        <h4 class="govuk-heading-s">Interaction type:<span style="font-weight: normal;"> Touch or select</span></h4>
+        <h4 class="govuk-heading-s">Digital feedback:<span style="font-weight: normal;"> Yellow focus indicator (highlight)</span></h4>
+
+        <div class="govuk-!-padding-bottom-3"></div>
+        <img src="/public/images/B000001-Dimensions.png" class="img-responsive" style="border: 1px solid #b1b4b6;"
+            alt="A wireframe of the multi choice grid item, demonstrating the 4:3 aspect ratio, margins and paddings around the 4 different user interface elements.">
+        <p class="govuk-body govuk-!-font-size-14">A wireframe of the multi choice grid item, demonstrating the 4:3
+            aspect ratio, margins and paddings around the 4 different user interface elements.</p>
+        <img src="/public/images/B000001-Multiple-Choice-One-Response.png" class="img-responsive"
+            style="border: 1px solid #b1b4b6;" alt="A mockup of the multi choice grid item.">
+        <p class="govuk-body govuk-!-font-size-14">A mockup of the multi choice grid item.</p>
+
+        <!-- User Research Findings -->
+
+        <h3 class="govuk-heading-m" id="workingForUsers">What's working for users?</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Most users instantly recoginse that the intended interaction for this item is to touch an image, and can do so with little to no usability issues</li>
+        </ul>
+
+        <h3 class="govuk-heading-m" id="notWorkingForUsers">What's isn't working for users?</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Some users think that pointing is the appropriate response to this question, but are able to interact once prompted by a practitioner</li>
+            <li>In some cases, we see users with too heavy/light touches that can lead to a light touch response not registering, or a heavy touch causing the screen to move.</li>
+        </ul>
+
+        <h3 class="govuk-heading-m" id="nextSteps">Next steps</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>We are in the process of exploring a 'familiarisation' area, where users can practice their touch responses ahead of an assessment. We will conduct research to determine whether users interact with this item more intuitively once they have seen a familiarisation area.</li>
+        </ul>
+
+        <h3 class="govuk-heading-m" id="nextSteps">View detailed research insights (beta) on Google slides</h3>
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="https://docs.google.com/presentation/d/1B2l1MIPGjh4h2U4P6ZXmRIDavQ8UhqpQizRb-DojhIo/edit#slide=id.g4d05972388_0_50" target="_blank">Sprint 9 - Slide 4</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="https://docs.google.com/presentation/d/1Ry6bkx-XTY1pHKEPrGzDEU3OfS5q1J0-HPbB-CEossU/edit#slide=id.g588e3d9549_0_38" target="_blank">Sprint 10 - Slide 9 (practitioner feedback)</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="https://docs.google.com/presentation/d/1Ry6bkx-XTY1pHKEPrGzDEU3OfS5q1J0-HPbB-CEossU/edit#slide=id.g588e3d9549_0_54" target="_blank">Sprint 10 - Slide 12</a>
+            </li>
+
+            <li>
+                <a class="govuk-link" href="https://docs.google.com/presentation/d/1WbQW6TH8DvGGb9tCEhpjRsxciELxqYiAm41IJYHTRJM/edit#slide=id.g5c9704601d_0_131" target="_blank">Sprint 13 - Slide 22-23 (practitioner feedback)</a>
+            </li>
+        </ul>
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <!-- Design Justifications -->
+
+        <h3 class="govuk-heading-m" id="designJustifications">Design justifications</h3>
+
+        <h4 class="govuk-heading-s" id="visualFeedback">Visual feedback</h4>
+        <p class="govuk-body">Every action a user does it should provide a visible, understandable and immediate
+            reaction. Feedback provides a sense of comfort, control and security, it tells our users if they're
+            doing the right thing.</p>
+
+        <h4 class="govuk-heading-s" id="forgivingDesign">Forgiving design</h4>
+        <p class="govuk-body">Using large touch areas and generous spacing between each user interface element takes
+            into account our users innacuracy and developing motor skills.</p>
+
+        <h4 class="govuk-heading-s" id="intelligentConsistency">Intelligent consistency</h4>
+        <p class="govuk-body">Encouraging the use of similar screens for similar functions, this means we can
+            duplicate and modify new designs quickly but more importantly, knowing that the layout and user
+            interface components used will work through evidenced research findings.</p>
+
+        <h4 class="govuk-heading-s" id="containerSize">Container size</h4>
+        <p class="govuk-body">The container in which the images are placed in are 200px by 200px (this dimension is
+            generally used across majority of the item types, specific item types require different sized
+            containers), this allows for sufficient space to place an illustration which can be sized to an easily
+            recognisable or understandable scale. </p>
+
+        <h4 class="govuk-heading-s" id="responsiveDesign">Responsive design</h4>
+        <p class="govuk-body">By containing the overall design within a 4:3 aspect ratio, the designs will adapt and
+            respond to different screen resolutions and devices.</p>
+
+        <div class="govuk-!-padding-bottom-5"></div>
+        <a href="#" class="govuk-link" id="toTopLink">Back to top</a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <!-- UR Status -->
+        <div class="govuk-heading-s" style="margin-bottom: 10px;">UR status</div>
+        <strong class="govuk-tag green-tag">Sufficient</strong>
+        <div class="govuk-!-padding-2"></div>
+        <!-- Sign-Off Status -->
+        <div class="govuk-heading-s" style="margin-bottom: 10px;">Sign-off status</div>
+        <strong class="govuk-tag green-tag">Signed Off</strong>
+        <div class="govuk-!-padding-2"></div>
+        <!-- Usability Rating -->
+        <div class="govuk-heading-s" style="margin-bottom: 10px;">Overall usability rating</div>
+        <strong class="govuk-tag green-tag">No difficulty</strong>
+    </div>
+
+</div>
+
+<script>
+    var toToplink = document.getElementById("toTopLink");
+
+    // When a user clicks the link, they will go back to the top of the current page they are on
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+{% endblock %}
