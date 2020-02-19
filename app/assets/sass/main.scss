@@ -122,5 +122,36 @@ strong.nhsuk-tag {
 		font-weight: 600;
 		font-size: 14px;
 		color: white;
-      }
+	  }
+	  
+	  &.tag-green-tag {
+		background: #007f3b;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: white;
+		}
+		&.tag-yellow-tag {
+			background: #ffeb3b;
+			padding: 2px 12px 5px 12px;
+			border-radius: 6px;
+			font: small-caption;
+			font-variant-caps: all-small-caps;
+			font-weight: 600;
+			font-size: 14px;
+			color: black;
+		  }
+		&.tag-red-tag {
+			background: #d5281b;
+			padding: 2px 12px 5px 12px;
+			border-radius: 6px;
+			font: small-caption;
+			font-variant-caps: all-small-caps;
+			font-weight: 600;
+			font-size: 14px;
+			color: white;
+		  }
    }
