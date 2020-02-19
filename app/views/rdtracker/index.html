@@ -18,7 +18,7 @@
 
     { page: 'Create account', id: 'v1/setup/otp', link: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
-    { page: 'Create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'Password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'blocked', css_class: 'blocked' },
+    { page: 'Create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'Password set', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'flagged', css_class: 'flagged' },
 
     { page: 'Create account', id: 'v1/setup/success', link: 'createaccount/v1/setup/success', name: 'Success', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
 
@@ -260,7 +260,7 @@
                 <!-- These are the rest of the options within the Page dropdown -->
 
                 <option value="awaiting-sign-off" {% if data.filter_sign_off_status == 'awaiting-sign-off' and data.filter != 'reset' %}selected{% endif %}>Awaiting sign-off</option>
-                <option value="blocked" {% if data.filter_sign_off_status == 'blocked' and data.filter != 'reset' %}selected{% endif %}>Blocked</option>
+                <option value="flagged" {% if data.filter_sign_off_status == 'flagged' and data.filter != 'reset' %}selected{% endif %}>flagged</option>
                 <option value="signed-off" {% if data.filter_sign_off_status == 'signed-off' and data.filter != 'reset' %}selected{% endif %}>Signed-off</option>
 
               </select>
