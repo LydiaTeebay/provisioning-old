@@ -17,7 +17,7 @@
 
     { page: 'Create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'Invite (email)', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
-    { page: 'Create account', id: 'v1/email/spinner', link: 'createaccount/v1/email/spinner', name: 'Spinner', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+    { page: 'Create account', id: 'v1/setup/spinner', link: 'createaccount/v1/setup/spinner', name: 'Spinner', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
     { page: 'Create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'Verification', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
 
@@ -136,7 +136,7 @@
       <div class="nhsuk-grid-column-one-third">
         <div class="nhsuk-panel nhsuk-panel custom-card-yellow">
           <div class="nhsuk-panel__body custom-card-small-text">
-            Awaiting Sign-off
+            Awaiting sign-off
           </div>
           <div class="nhsuk-!-padding-bottom-5"></div>
           <h1 class="nhsuk-panel__title custom-card-large-text">
@@ -196,6 +196,7 @@
                 <option value="Create account" {% if data.filter_page == 'Create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
                 <option value="Uplift" {% if data.filter_page == 'Uplift' and data.filter != 'reset' %}selected{% endif %}>Uplift</option>
                 <option value="Provisioning interface" {% if data.filter_page == 'Provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning interface</option>
+                <option value="Error" {% if data.filter_page == 'Error' and data.filter != 'reset' %}selected{% endif %}>Error</option>
 
               </select>
 
