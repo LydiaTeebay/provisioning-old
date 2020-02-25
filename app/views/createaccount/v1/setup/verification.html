@@ -12,11 +12,17 @@ Tell us your NHS number
   
     <div class="nhsuk-grid-column-two-thirds">
     
+
+    
                 <h1>
               Tell us your NHS number
             </h1>
+
+      <form action="{{ thisPage }}" method="post">
+
  
       <div class="nhsuk-form-group">
+      
           <label class="nhsuk-label" for="securityCodes">
             NHS number
           </label>
@@ -26,6 +32,10 @@ Tell us your NHS number
             <input class="nhsuk-input nhsuk-input--width-10" id="nhsnumber" name="nhsnumber" type="number" aria-describedby="nhsnumber" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
           </div>
             
+
+          <input id="phoneNumber" name="phoneNumber" value="07791463997" type="hidden">
+
+
 <a href="otp" role="button" draggable="false" class="nhsuk-button">
   Continue
 </a>
