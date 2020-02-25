@@ -5,12 +5,12 @@ const router = express.Router();
 
 // connect to Notify
 
-// Create new variables
+/* // Create new variables
 const notify = require('notifications-node-client').NotifyClient;
 const request = require('request');
 
 // Notify integration
-const notifyClient = new notify(process.env.NOTIFYAPIKEY);
+const notifyClient = new notify(process.env.NOTIFYAPIKEY); */
 
 
 /* router.post('/createaccount/v1/createaccount/setup/verification', function (req, res) {
