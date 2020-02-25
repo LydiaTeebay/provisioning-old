@@ -4,9 +4,9 @@ const router = express.Router();
 
 
 // connect to Notify
-
+/* 
 var NotifyClient = require('notifications-node-client').NotifyClient,
-    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY); */
 
 
 /* router.post('/createaccount/v1/createaccount/setup/verification', function (req, res) {
