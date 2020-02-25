@@ -13,7 +13,7 @@ const request = require('request');
 const notifyClient = new notify(process.env.NOTIFYAPIKEY);
 
 
-router.post('/createaccount/v1/createaccount/setup/verification', function (req, res) {
+/* router.post('/createaccount/v1/createaccount/setup/verification', function (req, res) {
     console.log('method called');
     // if(req.body.phoneNumber === '07791463997'){
     notifyClient.sendSms('42016552-237d-40ef-9ced-c4f3a4b20aad', req.body.phoneNumber)
@@ -26,7 +26,7 @@ router.post('/createaccount/v1/createaccount/setup/verification', function (req,
       });
     // }
     //res.redirect('/set-up/v4/register-enter-OTP');
-  });
+  }); */
 
 // Add your routes here - above the module.exports line
 
