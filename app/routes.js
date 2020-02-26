@@ -32,14 +32,15 @@ router.post('/createaccount/v1/setup/verification', function (req, res) {
     //res.redirect('/set-up/v4/register-enter-OTP');
   });
 
+
 //Notify initial email
-/* router.get('/createaccount/v1/index', function (req, res) {
+/*  router.get('/createaccount/v1/index', function (req, res) {
     var emailSent = req.query.emailSent
     console.log('render', req.query.emailSent)
     res.render('/createaccount/v1/index', { emailSent: emailSent }, function (err, html) {
         res.send(html)
     })
-})   */
+})    */
 
 router.post('/createaccount/v1/index', function (req, res) {
 
@@ -70,6 +71,40 @@ router.post('/createaccount/v1/index', function (req, res) {
 
     // This is the URL the users will be redirected to once the email has been sent
     res.redirect('/createaccount/v1/index?emailSent=true');
+
+})
+
+
+//Notify success email 
+router.post('/createaccount/v1/setup/passwordset', function (req, res) {
+
+    notifyClient.sendEmail(
+        '151389a8-2d91-412b-bf1c-aa8b14c02f8e',
+        req.body.emailAddress, {
+        personalisation: {
+            'UserFirstName': req.body.UserFirstName,
+            'UserLastName': req.body.UserLastName
+        },
+        reference: ''
+    })
+    .then(function (response) {
+        console.log('success')
+        res.redirect('/createaccount/v1/setup/success?emailSent=true');
+      }).catch(function (error) {
+        console.log('notify-error' + error)
+        res.redirect('/createaccount/v1/setup/success?emailSent=true');
+      }); 
+/*    }
+    res.redirect('/createaccount/v1/setup/success');
+     
+  });
+        .then(response => console.log('response'))
+        .catch(err => console.error('error', err))
+
+    console.log(req.body.emailAddress) */
+
+    // This is the URL the users will be redirected to once the email has been sent
+    res.redirect('/createaccount/v1/setup/success?emailSent=true');
 
 })
 
