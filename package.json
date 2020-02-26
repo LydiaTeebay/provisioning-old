@@ -33,6 +33,7 @@
     "keypather": "^3.0.0",
     "nhsuk-frontend": "^3.0.2",
     "node-sass": "^4.13.0",
+    "notifications-node-client": "^4.7.2",
     "nunjucks": "^3.2.0",
     "path": "^0.12.7"
   },
