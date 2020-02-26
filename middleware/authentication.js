@@ -15,8 +15,8 @@
 module.exports = function (req, res, next) {
   // External dependencies
   // Remove this line if we don't want password
-  const basicAuth = require('basic-auth')
-
+/*   const basicAuth = require('basic-auth')
+ */
   // Set configuration variables
   const env = (process.env.NODE_ENV || 'development').toLowerCase();
   const username = process.env.PROTOTYPE_USERNAME;
@@ -28,13 +28,13 @@ module.exports = function (req, res, next) {
     }
 
     // Remove this if we don't want password
-    const user = basicAuth(req)
+   /*  const user = basicAuth(req)
 
     if (!user || user.name !== username || user.pass !== password) {
       res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
       return res.sendStatus(401)
     }
-
+ */
     // up to here!
 
   }
