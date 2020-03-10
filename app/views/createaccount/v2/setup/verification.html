@@ -1,67 +1,64 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Tell us your NHS number
-
+What is your date of birth?
 {% endblock %}
-
 
 {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-  <div class="nhsuk-grid-row">
-  
-    <div class="nhsuk-grid-column-two-thirds">
-    
-
-    
-                <h1>
-              Tell us your NHS number
-            </h1>
-
-      {# <form action="{{ thisPage }}" method="post"> #}
-
- 
+    <form method="submit">
       <div class="nhsuk-form-group">
-      
-          <label class="nhsuk-label" for="securityCodes">
-            NHS number
-          </label>
-          <span class="nhsuk-hint" id="input-with-hint-text-hint">
-            Your NHS number is a 10 digit number, like 485 777 3456.
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What is your date of birth?
+            </h1>
+          </legend>
+          <span class="nhsuk-hint" id="example-hint">
+            For example, 31 3 1980
           </span>
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhsnumber" name="nhsnumber" type="number" aria-describedby="nhsnumber" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+
+          <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day"
+                  type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month"
+                  type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year"
+                  type="number" pattern="[0-9]*">
+              </div>
+            </div>
           </div>
-            
+        </fieldset>
+      </div>
 
-          {# <input id="phoneNumber" name="phoneNumber" value="07500078214" type="hidden"> #}
+      <a class="nhsuk-button full-width" href="passwordset">
+        Continue
+      </a>
 
-                  {# <button class="nhsuk-button">Continue</button> #}
-
-                          <a href="passwordset" class="nhsuk-button">Continue</a>
-
-                  </form>
-
-
-      {{ details({
-        "text": "Where can I find my NHS number?",
-        "HTML": "
-        <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-  <p>You can find your NHS number on any document sent to you by the NHS. This may include:</p>
-  <ul>
-    <li>prescriptions</li>
-    <li>test results</li>
-    <li>hospital referral letters</li>
-    <li>appointment letters</li>
-    <li>your NHS medical card</li>
-  </ul>
-  <p>Ask your GP practice for help if you can't find your NHS number.</p>
-  "
-}) }}
-
-    </div>  
+    </form>
   </div>
+</div>
+
+
 {% endblock %}
-
-
- 
-
