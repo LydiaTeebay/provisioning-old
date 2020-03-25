@@ -28,7 +28,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      {# <form action="{{ thisPage }}" method="post"> #}
+      <form action="email/invite" method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
@@ -47,13 +47,13 @@
             </label>
             <input class="nhsuk-input nhsuk-u-width-three-quarters" id="UserLastName" name="UserLastName" value="{{ data['UserLastName'] }}" type="text">
           </div>
-                    <input id="email" name="emailAddress" value="cid.testuser1@gmail.com" type="hidden"> 
+                    {# <input id="email" name="emailAddress" value="cid.testuser1@gmail.com" type="hidden">  #}
 
         </fieldset>
 
 
-        <button href="email/invite" class="nhsuk-button">Start Prototype</button>
-      {# </form> #}
+        <button class="nhsuk-button">Start Prototype</button>
+      </form>
     </div>  
   </div>
 {% endblock %}
