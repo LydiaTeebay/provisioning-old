@@ -4,15 +4,18 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/panel-confirmation';
 @import 'components/related-nav';
+@import 'components/list-border';
 @import 'components/spinner';
 @import 'components/button-spinner';
-@import 'patterns/related-items';
 
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
 
+@import 'patterns/related-items';
+@import 'patterns/panel';
+@import 'patterns/panel-group';
 
 .body-email {
 	background-color: #d8dde0;
@@ -149,3 +152,17 @@ strong.nhsuk-tag {
 			color: white;
 		  }
    }
+
+.nhsuk-header--transactional .nhsuk-header__transactional-service-name {
+	width: auto;
+	padding-left: 16px;
+	padding-top: 3px;
+}
+
+@media (min-width: 61.875em) {
+	.nhsuk-header--transactional .nhsuk-header__transactional-service-name {
+		width: auto;
+		padding-left: 16px;
+		padding-top: 3px;
+	}
+}
